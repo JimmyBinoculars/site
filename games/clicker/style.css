@@ -1,0 +1,38 @@
+:root {
+  --bg-colour: rgb(23, 23, 23);
+  --button-colour: rgb(40, 40, 40);
+}
+body {
+  background-color: var(--bg-colour);
+  overflow: hidden;
+  color: white;
+}
+.button {
+  display: inline-block;
+  background-color: var(--button-colour);
+  color: inherit;
+  border: none;
+  padding: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-radius 500ms;
+  transition: background-color 500ms;
+}
+.button:hover {
+  border-radius: 20px;
+  background-color: rgb(86, 98, 130);
+}
+.shop {
+  display: inline-block;
+  background-color: var(--button-colour);
+  color: inherit;
+  border: none;
+  padding: 20px;
+  border-radius:10px;
+  transition: border-radius 500ms;
+  transition: background-color 500ms;
+}
+.shop:hover {
+  border-radius: 20px;
+  background-color: rgb(86, 98, 130);
+}
