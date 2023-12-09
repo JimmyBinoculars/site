@@ -3,6 +3,7 @@
   --button-colour: rgb(40, 40, 40);
 }
 body {
+  font-family: 'consolas', sans-serif;
   background-color: var(--bg-colour);
   overflow: hidden;
   color: white;
