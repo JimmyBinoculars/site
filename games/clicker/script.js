@@ -8,7 +8,6 @@ function handleClick(type) {
   switch (type) {
     case 'main':
       clicks++;
-      count.innerHTML = (`Total clicks: ${clicks}`);
       break;
     case 'grandma':
       if (clicks >= 25) {
@@ -23,11 +22,12 @@ function handleClick(type) {
       }
       break;
   }
+  setClicks(); // Update total clicks immediately
+  frame(); // Update the button colors after each click
 }
 
 function frame() {
   Array.from(buttons).forEach(button => {
-    console.log("HI");
     if (button.id !== "main-button") {
       let buttonCost = parseInt(button.getAttribute("cost"));
       
@@ -43,7 +43,6 @@ function frame() {
 }
 
 function setClicks() {
-  
   count.innerHTML = (`Total clicks: ${clicks}`);
 }
 
@@ -58,5 +57,5 @@ function updateFarms() {
 // Set up an asynchronous loop using setInterval
 setInterval(updateGrandmas, 1000);
 setInterval(updateFarms, 1000);
-setInterval(setClicks, 1000); // Increase clicks every second
-setInterval(frame, 100);
+setInterval(setClicks, 1000);
+setInterval(frame, 100); // Update the button colors every 100 milliseconds
