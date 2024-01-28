@@ -42,12 +42,21 @@ function frame() {
   document.getElementById("farmCount").innerHTML = `Farms: ${farm}`;
 }
 
-function increaseClicks() {
-  clicks += grandma; // Increment clicks by the number of grandmas
-  clicks += farm * 10;
+function setClicks() {
+  
   count.innerHTML = (`Total clicks: ${clicks}`);
 }
 
+function updateGrandmas() {
+  clicks += grandma;
+}
+
+function updateFarms() {
+  clicks += farm * 10;
+}
+
 // Set up an asynchronous loop using setInterval
-setInterval(increaseClicks, 1000); // Increase clicks every second
-setInterval(frame, 100);
+setInterval(updateGrandmas, 1000);
+setInterval(updateFarms, 1000);
+setInterval(setClicks, 1000); // Increase clicks every second
+setInterval(frame, 10000);
