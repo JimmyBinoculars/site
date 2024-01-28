@@ -59,4 +59,4 @@ function updateFarms() {
 setInterval(updateGrandmas, 1000);
 setInterval(updateFarms, 1000);
 setInterval(setClicks, 1000); // Increase clicks every second
-setInterval(frame, 10000);
+setInterval(frame, 100);
