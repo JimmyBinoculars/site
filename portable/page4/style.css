@@ -1,0 +1,109 @@
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+}
+
+body {
+  font-family: 'consolas', sans-serif;
+  color: white;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+#title {
+  font-size: 700%;
+  padding: 0;
+  padding-top: 7.5vh;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  left: 49.5%;
+  transform: translateX(-50%);
+}
+#portfolio {
+  color: white;
+  align-items: center;
+  background-color: var(--bg-color);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px;
+}
+#portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;  
+  max-width: 922px;
+  width: calc(100% - 20px);
+}
+#portfolio-container:hover > .portfolio-item > .portfolio-border {
+  opacity: 1;
+}
+.portfolio-item {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 260px;
+  position: relative;
+  width: 300px;  
+}
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+.portfolio-item::before,
+.portfolio-item > .portfolio-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 2;
+}
+.portfolio-item::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255,255,255,0.06) 0%,
+    transparent 40%
+  );
+  z-index: 3;
+}
+.portfolio-item > .portfolio-border {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255,255,255,0.3) 0%,
+    transparent 40%
+  );
+  z-index: 1;
+}
+.portfolio-item > .portfolio-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  height: calc(100% - 8px);
+  margin: 4px;
+  position: relative;
+  width: calc(100% - 8px);
+  z-index: 2;
+}
+.portfolio-title {
+  display: grid;
+  justify-content: center;
+  font-size: 200%;
+}
+.portfolio-icon {
+  display: grid;
+  justify-content: center;
+  font-size: 1000%;
+}
+.footer {
+  position: absolute;
+  top: 90%;
+  left: 40%;
+}
