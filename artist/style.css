@@ -1,0 +1,17 @@
+:root {
+    --bg-colour: rgb(23, 23, 23);
+    --text-colour: rgb(181, 181, 181);
+    --link-colour: rgb(104, 104, 104);
+}
+body {
+    font-family: 'Consolas', monospace;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+}
+h1 {
+    font-size: xxx-large;
+}
+a {
+    text-decoration: none;
+    color: var(--link-colour);
+}
