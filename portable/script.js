@@ -8,20 +8,20 @@ document.getElementById("portfolio-container").onmousemove = e => {
   }
 }
 
-document.getElementById("Iron").addEventListener("click", function() {
-  downloadFile("./Downloads/IronPortable.zip");
-  downloadFile("./Downloads/IronPortable.z01");
-});
+function ironDownload() {
+  downlaodFile("./Downloads/IronPortable.zip" "IronPortable.zip")
+  downloadFile("./Downloads/IronPortable.z01", "IronPortable.z01")
 
-function downloadFile(filename) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Placeholder content for ' + filename));
-  element.setAttribute('download', filename);
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
+function downloadFile(url, fileName) {
+  fetch(url, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
+    .then((res) => res.blob())
+    .then((res) => {
+      const aElement = document.createElement("a");
+      aElement.setAttribute("download", fileName);
+      const href = URL.createObjectURL(res);
+      aElement.href = href;
+      aElement.setAttribute("target", "_blank");
+      aElement.click();
+      URL.revokeObjectURL(href);
+    });
 }
