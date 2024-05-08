@@ -8,18 +8,20 @@ document.getElementById("portfolio-container").onmousemove = e => {
   }
 }
 
-function downloadFiles() {
-  var file1Url = './Downloads/IronPortable.zip'; // Replace with actual file URL
-  var file2Url = './Downloads/IronPortable.z01'; // Replace with actual file URL
+document.getElementById("Iron").addEventListener("click", function() {
+  downloadFile("./Downloads/IronPortable.zip");
+  downloadFile("./Downloads/IronPortable.z01");
+});
 
-  var link = document.getElementById('downloadLink');
-  link.setAttribute('href', file1Url);
-  link.setAttribute('download', ''); // This attribute is necessary for download
-  link.click();
+function downloadFile(filename) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Placeholder content for ' + filename));
+  element.setAttribute('download', filename);
 
-  // Create a new link for the second file
-  var link2 = document.createElement('a');
-  link2.setAttribute('href', file2Url);
-  link2.setAttribute('download', ''); // This attribute is necessary for download
-  link2.click();
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
