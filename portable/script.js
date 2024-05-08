@@ -9,8 +9,8 @@ document.getElementById("portfolio-container").onmousemove = e => {
 }
 
 function ironDownload() {
-  downlaodFile("./Downloads/IronPortable.zip" "IronPortable.zip")
-  downloadFile("./Downloads/IronPortable.z01", "IronPortable.z01")
+  downlaodFile("./Downloads/" "IronPortable.zip")
+  downloadFile("./Downloads/", "IronPortable.z01")
 }
 
 function downloadFile(url, fileName) {
